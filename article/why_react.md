@@ -81,7 +81,7 @@ react 完善了一種模式叫做
 1, 新增兩個變數並用 ReactDOM.render() 定義好 DOM 結構
 
 ```js
-const value = "React" 
+let value = "React" 
 let number = 0
 
 function render(){
@@ -110,6 +110,7 @@ nform.addEventListener("submit", (e)=> {
   const li = document.createElement("li")
   li.appendChild(document.createTextNode( rVal.value ))
   r.appendChild(li)
+  value = rVal.value
   number += 1
   rVal.value = ""
   render()
