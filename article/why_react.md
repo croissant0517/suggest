@@ -48,6 +48,7 @@ nform.addEventListener("submit", (e)=> {
   ul.appendChild(li)
   number += 1
   numspan.innerText = number
+  ninput.value = ""
 })
 ```
 ![](./md-img/3.png)
@@ -73,6 +74,53 @@ react 完善了一種模式叫做
 首先最大的改變就是，工程師只要在意 JS 怎麼寫就可以，不需要關注兩個地方。
 
 上面的範例，用 React 簡易實現如下
+1, 新增兩個變數並用 ReactDOM.render() 定義好 DOM 結構
+
+```js
+const value = "React" 
+let number = 0
+
+function render(){
+   
+  ReactDOM.render(
+    <div className="list">
+        <h1>Hello, {value}</h1>
+        <ul id="r"></ul>
+        <form>
+          Name: <input type="text" id="rVal" />
+        </form>
+        新增了<span>{number}</span>次
+      </div>
+  , document.querySelector('#root'))
+  
+}
+```
+![](./md-img/6.png)
+
+2, 監聽 form submit 並執行 ReactDOM.render
+```js
+const nform = document.getElementsByTagName("form")[0]
+nform.addEventListener("submit", (e)=> {
+  e.preventDefault()
+  value.innerText = rVal.value
+  const li = document.createElement("li")
+  li.appendChild(document.createTextNode( rVal.value ))
+  r.appendChild(li)
+  number += 1
+  rVal.value = ""
+  render()
+})
+```
+目前我們將 html dom 都寫在 ReactDOM.render 方法內，監聽 form submit 時也會更新變數並重新渲染 UI。
+
+完成了與 DOM/JS 一樣的功能。
+
+![](./md-img/7.png)
+
+## React 還提供了組件化的撰寫方式以及語法糖
+
+我們可以將與組件相關的 data、方法寫在一起，並使用 React 提供的語法糖與生命週期讓代碼調整成：
+
 ```js
 <!-- React  -->
 class List extends React.Component {
@@ -86,8 +134,8 @@ class List extends React.Component {
     const li = document.createElement("li")
     li.appendChild(document.createTextNode( rVal.value ))
     r.appendChild(li)
-     
     this.setState({value: rVal.value, number: this.state.number + 1 })
+    rVal.value = ""
   }
   render() {
     return (
