@@ -69,11 +69,15 @@ nform.addEventListener("submit", (e)=> {
 react 完善了一種模式叫做
 > User Interface as a function of data
 
+> 畫面就是一個函數，傳入數據後更新畫面，也就是數據驅動畫面的意思。
+
 ![](./md-img/5.png)
 
-首先最大的改變就是，工程師只要在意 JS 怎麼寫就可以，不需要關注兩個地方。
+首先最大的改變就是，工程師只要在意 JS 怎麼寫就可以，不需要關注兩個地方(html & js)。
+
 
 上面的範例，用 React 簡易實現如下
+
 1, 新增兩個變數並用 ReactDOM.render() 定義好 DOM 結構
 
 ```js
@@ -117,9 +121,9 @@ nform.addEventListener("submit", (e)=> {
 
 ![](./md-img/7.png)
 
-## React 還提供了組件化的撰寫方式以及語法糖
+## React 還提供了組件化的撰寫方式、語法糖以及組件生命週期
 
-我們可以將與組件相關的 data、方法寫在一起，並使用 React 提供的語法糖與生命週期讓代碼調整成：
+我們可以將與組件相關的 data、方法寫在一起，並使用 React 提供的語法糖將代碼調整成如下：
 
 ```js
 <!-- React  -->
