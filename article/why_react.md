@@ -31,7 +31,7 @@ const ninput = document.getElementById("nVal")
 ```
 ![](./md-img/2.png)
 
-2, 從頁面中取出改變次數的"數字"並定義一個變數紀錄
+2, 從頁面中取出改變次數的"數字"並定義一個變數紀錄之
 ```js
 let number = parseInt(nNum.innerText, 10)
 ```
@@ -60,6 +60,7 @@ nform.addEventListener("submit", (e)=> {
 首先要先將頁面中需要關注的 dom 元素抽象到 JS 代碼中。寫好變數、監聽、互動等邏輯後再更新至頁面。
 
 且從 JS 代碼中不容易一眼就看清楚整個頁面邏輯是什麼。尤其是監聽 form 變化那邊，既有取頁面資料、又有更新頁面邏輯。當架構越來越大時這是非常難維護的。
+
 ![](./md-img/4.png)
 
 # React 作法
