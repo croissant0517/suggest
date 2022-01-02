@@ -30,6 +30,7 @@ const numspan = document.getElementById("nNum")
 const ninput = document.getElementById("nVal")
 ```
 ![](./md-img/2.png)
+
 2, 從頁面中取出改變次數的"數字"並定義一個變數紀錄
 ```js
 let number = parseInt(nNum.innerText, 10)
@@ -54,7 +55,7 @@ nform.addEventListener("submit", (e)=> {
 
 ## 缺點
 
-傳統的 Js 寫法會發現至少永遠需要關注兩個地方：1, 頁面 、2, JS代碼。
+傳統的 Js 寫法會發現至少永遠需要關注兩個地方：1 頁面 、2 JS代碼。
 
 首先要先將頁面中需要關注的 dom 元素抽象到 JS 代碼中。寫好變數、監聽、互動等邏輯後再更新至頁面。
 
@@ -63,7 +64,7 @@ nform.addEventListener("submit", (e)=> {
 
 # React 作法
 
-首先 react 完善了一種模式叫做
+react 完善了一種模式叫做
 > User Interface as a function of data
 
 ![](./md-img/5.png)
