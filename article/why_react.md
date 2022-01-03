@@ -22,7 +22,7 @@
 
 ## 需求是使用者在 input 中輸入文字並更新到頁面中
 
-1, 首先我們需要先從取出頁面中會隨著更新而改變的元素
+1, 首先我們需要先從 html 頁面取出會隨著 submit 更新而改變的元素
 ```js
 const nnmane = document.getElementById("nName")
 const ul = document.getElementById("n")
@@ -159,7 +159,7 @@ class List extends React.Component {
 ReactDOM.render(<List name="React" />, document.getElementById("root"))
 ```
 
-### 對比原生 DOM/JS 寫法的難點
+### 原生 DOM/JS 對比 React的難點
 
 原生 dom 及從屬關係（同時是傳遞關係）是通過 html 生成的，當把 Component 抽象為 js 時，要能實現子組件的創建、銷毀、data 傳遞、render、事件監聽（不一定是dom事件）會非常麻煩且代碼難以維護。
 
